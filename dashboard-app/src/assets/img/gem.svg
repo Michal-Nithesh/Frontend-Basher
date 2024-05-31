@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21.764" height="25.131" viewBox="0 0 21.764 25.131">
+  <g id="gem" transform="translate(-34.297 0)">
+    <path id="Path_4093" data-name="Path 4093" d="M45.179,0,34.3,6.283V18.848l10.882,6.283,10.882-6.283V6.283Z" fill="#82d2ff"/>
+    <path id="Path_4094" data-name="Path 4094" d="M45.179,12.566V0L34.3,6.283Z" fill="#08b7fc"/>
+    <path id="Path_4095" data-name="Path 4095" d="M256,256Z" transform="translate(-210.821 -243.434)" fill="#82d2ff"/>
+    <path id="Path_4096" data-name="Path 4096" d="M34.3,128v12.566l10.882-6.283Z" transform="translate(0 -121.717)" fill="#006dff"/>
+    <path id="Path_4097" data-name="Path 4097" d="M266.882,128h0L256,134.283h0l10.882,6.283h0Z" transform="translate(-210.821 -121.717)" fill="#08b7fc"/>
+    <path id="Path_4098" data-name="Path 4098" d="M45.179,256,34.3,262.283l10.882,6.283Z" transform="translate(0 -243.434)" fill="#0050c0"/>
+    <path id="Path_4099" data-name="Path 4099" d="M256,268.566l10.882-6.283L256,256Z" transform="translate(-210.821 -243.434)" fill="#006dff"/>
+    <path id="Path_4100" data-name="Path 4100" d="M143.162,122.16v-7.092l-6.142-3.546-6.142,3.546v7.092l6.142,3.546Z" transform="translate(-91.841 -106.049)" fill="#82d2ff"/>
+    <path id="Path_4101" data-name="Path 4101" d="M262.142,122.16v-7.092L256,111.523v14.183Z" transform="translate(-210.821 -106.049)" fill="#55cbff"/>
+  </g>
+</svg>
