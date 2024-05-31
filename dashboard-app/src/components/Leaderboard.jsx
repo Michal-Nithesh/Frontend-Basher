@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import crownIcon from '../assets/img/crown.svg';
 import cupIcon from '../assets/img/cup.svg';
 import medalIcon from '../assets/img/medal.svg';
@@ -15,15 +14,18 @@ import line from '../assets/img/line.svg';
 import Bcircle from '../assets/img/brown_circle.svg';
 import logo from '../assets/img/logo.png';
 import '../css/Leaderboard.css';
+import { handleDropdown } from '../js/script';
+import { Link } from 'react-router-dom'; // Use Link for internal navigation
 
 const Leaderboard = () => {
     const [leaderboard, setLeaderboard] = useState([]);
 
     useEffect(() => {
-        fetch('https://improved-enigma-6jj6x655796c47xg-8000.app.github.dev/api/leaderboard/')
+        fetch('http://127.0.0.1:8000/api/leaderboard/')
             .then(response => response.json())
             .then(data => setLeaderboard(data))
             .catch(error => console.error('There was an error!', error));
+        handleDropdown();
     }, []);
 
     const randomUserNumber = Math.floor(Math.random() * 7) + 1;
@@ -32,7 +34,7 @@ const Leaderboard = () => {
         <>
             <div id="__next">
                 <div id="main-wrapper">
-                    <header className="header dashboard @@headerClass">
+                    <div className="header dashboard @@headerClass">
                         <div className="container">
                             <div className="row">
                                 <div className="col-xl-12">
@@ -45,10 +47,18 @@ const Leaderboard = () => {
                                         </button>
                                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                             <ul className="navbar-nav menu">
-                                                <li className="nav-item"><Link className="nav-link" to="#About">About</Link></li>
-                                                <li className="nav-item"><Link className="nav-link" to="#affiliate">Affiliates</Link></li>
-                                                <li className="nav-item"><Link className="nav-link" to="#leaderboard">Leaderboards</Link></li>
-                                                <li className="nav-item"><Link className="nav-link" to="#support">Support</Link></li>
+                                                <li className="nav-item">
+                                                    <Link className="nav-link" to="#About">About</Link>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <Link className="nav-link" to="#affiliate">Affiliates</Link>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <Link className="nav-link" to="#leaderboard">Leaderboards</Link>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <Link className="nav-link" to="#support">Support</Link>
+                                                </li>
                                             </ul>
                                         </div>
                                         <div className="dashboard_log my-2">
@@ -66,10 +76,18 @@ const Leaderboard = () => {
                                                         <span className="arrow"><i className="la la-angle-down"></i></span>
                                                     </div>
                                                     <div className="dropdown-menu dropdown-menu-end" style={{ right: 0, left: 'auto' }}>
-                                                        <Link className="dropdown-item" to="#profile"><i className="la la-user"></i>Profile</Link>
-                                                        <Link className="dropdown-item" to="#history"><i className="la la-book"></i>History</Link>
-                                                        <Link className="dropdown-item" to="#settings"><i className="la la-cog"></i>Settings</Link>
-                                                        <Link className="dropdown-item logout" to="#Logout"><i className="la la-sign-out"></i>Logout</Link>
+                                                        <Link className="dropdown-item" to="#profile">
+                                                            <i className="la la-user"></i>Profile
+                                                        </Link>
+                                                        <Link className="dropdown-item" to="#history">
+                                                            <i className="la la-book"></i>History
+                                                        </Link>
+                                                        <Link className="dropdown-item" to="#settings">
+                                                            <i className="la la-cog"></i>Settings
+                                                        </Link>
+                                                        <Link className="dropdown-item logout" to="#Logout">
+                                                            <i className="la la-sign-out"></i>Logout
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -78,7 +96,7 @@ const Leaderboard = () => {
                                 </div>
                             </div>
                         </div>
-                    </header>
+                    </div>
                     <div className="page_title section-padding">
                         <div className="container">
                             <div className="row">
@@ -140,7 +158,7 @@ const Leaderboard = () => {
                                                             {leaderboard.slice(3).map((user, index) => (
                                                                 <tr key={user.id}>
                                                                     <th scope="row">{index + 4}</th>
-                                                                    <td className="user_circle"><span className={`circle user${randomUserNumber}`}></span>{user.username}</td>
+                                                                    <td className="user_circle"> <span className={`circle user${randomUserNumber}`}></span>{user.username}</td>
                                                                     <td>{user.points} <img src={gemIcon} alt="Gem" /></td>
                                                                 </tr>
                                                             ))}
@@ -182,12 +200,14 @@ const Leaderboard = () => {
                         </div>
                     </div>
                 </div>
-                <footer className="footer dashboard">
+                <div className="footer dashboard">
                     <div className="container">
                         <div className="row">
                             <div className="col-xl-6">
                                 <div className="footer-link text-left">
-                                    <Link className="m_logo" to="#leaderboard"><img src={mLogo} alt="Logo" /></Link>
+                                    <Link className="m_logo" to="#leaderboard">
+                                        <img src={mLogo} alt="Logo" />
+                                    </Link>
                                     <Link to="#">Shop</Link>
                                     <Link to="#affiliate">Affiliates</Link>
                                     <Link to="#leaderboard">Leaderboards</Link>
@@ -220,7 +240,7 @@ const Leaderboard = () => {
                             </div> */}
                         </div>
                     </div>
-                </footer>
+                </div>
             </div>
         </>
     );
