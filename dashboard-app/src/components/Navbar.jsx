@@ -45,7 +45,7 @@ const Navbar = () => {
                                         <Link className="nav-link" to="#affiliate">Affiliates</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="#leaderboard">Leaderboards</Link>
+                                        <Link className="nav-link" to="/leaderboard">Leaderboards</Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link className="nav-link" to="#support">Support</Link>
@@ -67,7 +67,7 @@ const Navbar = () => {
                                             <span className="arrow"><i className="la la-angle-down"></i></span>
                                         </div>
                                         <div className={`dropdown-menu dropdown-menu-end ${dropdownOpen ? 'show' : ''}`}>
-                                            <Link className="dropdown-item" to="#profile">
+                                            <Link className="dropdown-item" to="/profile">
                                                 <i className="la la-user"></i>Profile
                                             </Link>
                                             <Link className="dropdown-item" to="#history">

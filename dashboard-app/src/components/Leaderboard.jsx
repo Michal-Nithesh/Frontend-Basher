@@ -15,7 +15,7 @@ import line from '../assets/img/line.svg';
 import Bcircle from '../assets/img/brown_circle.svg';
 import logo from '../assets/img/logo.png';
 import '../css/Leaderboard.css';
-import { handleDropdown } from '../js/script';
+
 import { Link } from 'react-router-dom'; // Use Link for internal navigation
 
 const Leaderboard = () => {
@@ -26,7 +26,7 @@ const Leaderboard = () => {
             .then(response => response.json())
             .then(data => setLeaderboard(data))
             .catch(error => console.error('There was an error!', error));
-        handleDropdown();
+        
     }, []);
 
     const randomUserNumber = Math.floor(Math.random() * 7) + 1;
