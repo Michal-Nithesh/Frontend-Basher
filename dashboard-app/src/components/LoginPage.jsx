@@ -1,3 +1,4 @@
+//loginpage.jsx
 import React from 'react';
 import bash from '../assets/img/bashers.png';
 import google from '../assets/img/google-icon.png';
@@ -33,16 +34,18 @@ function LoginPage() {
     onSuccess: async (tokenResponse) => {
       console.log('Login successful:', tokenResponse);
       const { access_token } = tokenResponse;
-
+      console.log(access_token);
       try {
         const res = await axios.post('http://127.0.0.1:8000/api/auth/social/google/', {
           access_token,
+          
         });
 
         if (res.status === 200) {
           const data = res.data;
+          console.log('Login successful:', data);
           // Assuming the Django backend sends a JWT token on successful login
-          localStorage.setItem('token', data.token);
+          localStorage.setItem('token', data.key);
           navigate('/leaderboard'); // Navigate to a protected route
         } else {
           console.error('Login failed:', res.data.message);

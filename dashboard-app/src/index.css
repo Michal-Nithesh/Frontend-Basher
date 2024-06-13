@@ -68,3 +68,10 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-menu.show {
+  display: block;
+}

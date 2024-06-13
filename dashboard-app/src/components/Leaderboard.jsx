@@ -1,3 +1,4 @@
+//Leaderboard component
 import React, { useState, useEffect } from 'react';
 import crownIcon from '../assets/img/crown.svg';
 import cupIcon from '../assets/img/cup.svg';
@@ -34,69 +35,7 @@ const Leaderboard = () => {
         <>
             <div id="__next">
                 <div id="main-wrapper">
-                    <div className="header dashboard @@headerClass">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-xl-12">
-                                    <nav className="navbar navbar-expand-lg navbar-light">
-                                        <Link className="navbar-brand" to="/">
-                                            <img src={logo} alt="Logo" />
-                                        </Link>
-                                        <button className="navbar-toggler" type="button">
-                                            <span className="navbar-toggler-icon"></span>
-                                        </button>
-                                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                                            <ul className="navbar-nav menu">
-                                                <li className="nav-item">
-                                                    <Link className="nav-link" to="#About">About</Link>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <Link className="nav-link" to="#affiliate">Affiliates</Link>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <Link className="nav-link" to="#leaderboard">Leaderboards</Link>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <Link className="nav-link" to="#support">Support</Link>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div className="dashboard_log my-2">
-                                            <div className="d-flex align-items-center">
-                                                <div className="account_money">
-                                                    <ul>
-                                                        <li className="crypto"><span>2500</span><img src={gem} alt="Gem" /></li>
-                                                        <li className="usd"><span>4000 USD</span></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="profile_log dropdown">
-                                                    <div className="user">
-                                                        <span className="thumb"><i className="la la-user"></i></span>
-                                                        <span className="name">Thomas Christ</span>
-                                                        <span className="arrow"><i className="la la-angle-down"></i></span>
-                                                    </div>
-                                                    <div className="dropdown-menu dropdown-menu-end" style={{ right: 0, left: 'auto' }}>
-                                                        <Link className="dropdown-item" to="#profile">
-                                                            <i className="la la-user"></i>Profile
-                                                        </Link>
-                                                        <Link className="dropdown-item" to="#history">
-                                                            <i className="la la-book"></i>History
-                                                        </Link>
-                                                        <Link className="dropdown-item" to="#settings">
-                                                            <i className="la la-cog"></i>Settings
-                                                        </Link>
-                                                        <Link className="dropdown-item logout" to="#Logout">
-                                                            <i className="la la-sign-out"></i>Logout
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div className="page_title section-padding">
                         <div className="container">
                             <div className="row">

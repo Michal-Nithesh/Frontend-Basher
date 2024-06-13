@@ -4,8 +4,9 @@ export function handleDropdown() {
     if (!userElement) {
         console.error('User element not found');
         return;
+    
     }
-
+ 
     userElement.addEventListener('click', function() {
         var dropdownMenu = document.querySelector('.profile_log .dropdown-menu.dropdown-menu-end');
         if (!dropdownMenu) {

@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-menu.show {
+  display: block;
+}

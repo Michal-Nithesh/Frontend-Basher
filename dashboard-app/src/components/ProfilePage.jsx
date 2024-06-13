@@ -4,38 +4,25 @@ import axios from 'axios';
 
 const ProfilePage = () => {
     const [profile, setProfile] = useState({});
-    const navigate = useNavigate();
+    const token = localStorage.getItem('token');
 
-    useEffect(() => {
-        const token = localStorage.getItem('token');
+useEffect(() => {
+    axios.get('http://127.0.0.1:8000/api/user/profile/', {
+        headers: {
+            'Authorization': `Token ${token}`,
+        },
+    })
+    .then(response => setProfile(response.data))
+    .catch(error => console.error('Error:', error));
+}, []);
 
-        if (!token) {
-            navigate('/login');
-        }
-
-        axios.get('YOUR_BACKEND_URL/api/profile/', {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        })
-        .then(response => {
-            setProfile(response.data);
-        })
-        .catch(error => {
-            console.error('There was an error fetching the profile!', error);
-            if (error.response && error.response.status === 401) {
-                navigate('/login');
-            }
-        });
-    }, [navigate]);
-
-    return (
-        <div>
-            <h1>Profile Page</h1>
-            <p>Name: {profile.name}</p>
-            <p>Email: {profile.email}</p>
-        </div>
-    );
+return (
+    <div>
+        <h1>Profile Page</h1>
+        <p>Name: {profile.username}</p>
+        <p>Email: {profile.email}</p>
+    </div>
+);
 };
 
 export default ProfilePage;

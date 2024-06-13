@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
 import Leaderboard from './components/Leaderboard';
+import Navbar from './components/Navbar';
 import ProfilePage from './components/ProfilePage';
 import Dashboard from './pages/Dashboard';
 import PrivateRoute from './components/PrivateRoute';
@@ -13,6 +14,7 @@ const App = () => {
     return (
         <GoogleOAuthProvider clientId={clientId}>
             <Router>
+                <Navbar />
                 <Routes>
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/leaderboard" element={<PrivateRoute><Leaderboard /></PrivateRoute>} />
