@@ -9,11 +9,12 @@ import { fetchUserData } from '../api';
 const Navbar = () => {
     const [user, setUser] = useState(null);
     const [dropdownOpen, setDropdownOpen] = useState(false);
-
+    console.log('User fron nav:', user);
     useEffect(() => {
         const fetchData = async () => {
             const userData = await fetchUserData();
             setUser(userData);
+            console.log('User data:', userData);
         };
 
         fetchData();
@@ -56,8 +57,8 @@ const Navbar = () => {
                                 <div className="d-flex align-items-center">
                                     <div className="account_money">
                                         <ul>
-                                            <li className="crypto"><span>2500</span><img src={gem} alt="Gem" /></li>
-                                            <li className="usd"><span>4000 USD</span></li>
+                                            <li className="crypto"><span>{user ? user.points:'loading'}</span></li>
+                                            <li className="usd"><img src={gem} alt="Gem" /></li>
                                         </ul>
                                     </div>
                                     <div className="profile_log dropdown">

@@ -38348,6 +38348,19 @@ body {
    font-size: 14px;
  }
  
+ /*Added*/
+ .thumb{
+  height: 45px;
+  width: 45px;
+  border-radius: 50px;
+  border: 1px solid #2f2cd8;
+  display: inline-block;
+  margin-right: 15px;
+  background: #2f2cd8;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+ }
 
 
  
