@@ -12,7 +12,7 @@ const PointsChart = ({ duration }) => {
     const chartInstanceRef = useRef(null);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/points/', {
+        axios.get('https://9g7phc4b-8000.inc1.devtunnels.ms/api/points/', {
             headers: {
                 'Authorization': `Token ${token}`,
             },

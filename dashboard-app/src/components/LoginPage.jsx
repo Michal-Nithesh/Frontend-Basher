@@ -36,7 +36,7 @@ function LoginPage() {
       const { access_token } = tokenResponse;
       console.log(access_token);
       try {
-        const res = await axios.post('http://127.0.0.1:8000/api/auth/social/google/', {
+        const res = await axios.post('https://9g7phc4b-8000.inc1.devtunnels.ms/api/auth/social/google/', {
           access_token,
           
         });

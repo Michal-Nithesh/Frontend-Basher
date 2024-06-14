@@ -22,7 +22,7 @@ const Leaderboard = () => {
     const [leaderboard, setLeaderboard] = useState([]);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/leaderboard/')
+        fetch('https://9g7phc4b-8000.inc1.devtunnels.ms/api/leaderboard/')
             .then(response => response.json())
             .then(data => setLeaderboard(data))
             .catch(error => console.error('There was an error!', error));

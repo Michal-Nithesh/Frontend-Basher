@@ -67,7 +67,7 @@ const Navbar = () => {
                                             <Link className="dropdown-item" to="/profile">
                                                 <i className="la la-user"></i>Profile
                                             </Link>
-                                            <Link className="dropdown-item" to="#history">
+                                            <Link className="dropdown-item" to="/history">
                                                 <i className="la la-book"></i>History
                                             </Link>
                                             <Link className="dropdown-item" to="#settings">

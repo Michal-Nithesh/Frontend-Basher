@@ -5,6 +5,7 @@ import Leaderboard from './components/Leaderboard';
 import Navbar from './components/Navbar';
 import ProfilePage from './components/ProfilePage';
 import Dashboard from './pages/Dashboard';
+import HistoryPage from './components/HistoryPage';
 import PrivateRoute from './components/PrivateRoute';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
@@ -20,6 +21,7 @@ const App = () => {
                     <Route path="/leaderboard" element={<PrivateRoute><Leaderboard /></PrivateRoute>} />
                     <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
                     <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+                    <Route path="/history" element={<PrivateRoute><HistoryPage /></PrivateRoute>} />
                 </Routes>
             </Router>
         </GoogleOAuthProvider>
