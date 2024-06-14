@@ -142,7 +142,7 @@ const ProfilePage = () => {
                                                         <span className="icons usd">
                                                             <i className="fa fa-usd"></i>
                                                         </span>
-                                                        Coin Earned
+                                                        Points Earned
                                                         <span className="active current-duration">{durationDisplayNames[duration]}</span>
                                                     </h4>
                                                     <div className="duration-option">
