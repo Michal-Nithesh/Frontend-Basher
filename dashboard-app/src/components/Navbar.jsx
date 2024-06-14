@@ -2,26 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/img/logo.png';
 import gem from '../assets/img/gem.svg';
-import axios from 'axios'; // Import axios for making API calls
-import { fetchUserData } from '../api';
-// import '../css/Navbar.css'; // Assuming you have some CSS for styling
+import { fetchUserData } from '../api'; // Import fetchUserData
 
 const Navbar = () => {
     const [user, setUser] = useState(null);
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    console.log('User fron nav:', user);
+
     useEffect(() => {
         const fetchData = async () => {
             const userData = await fetchUserData();
             setUser(userData);
-            console.log('User data:', userData);
         };
 
         fetchData();
     }, []);
 
     const toggleDropdown = () => {
-        console.log('Dropdown toggle clicked');
         setDropdownOpen(!dropdownOpen);
     };
 
@@ -57,7 +53,7 @@ const Navbar = () => {
                                 <div className="d-flex align-items-center">
                                     <div className="account_money">
                                         <ul>
-                                            <li className="crypto"><span>{user ? user.points:'loading'}</span></li>
+                                            <li className="crypto"><span>{user ? user.points : 'Loading...'}</span></li>
                                             <li className="usd"><img src={gem} alt="Gem" /></li>
                                         </ul>
                                     </div>

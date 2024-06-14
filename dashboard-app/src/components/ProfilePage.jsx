@@ -17,6 +17,7 @@ import Bcircle from '../assets/img/brown_circle.svg';
 import logo from '../assets/img/logo.png';
 import '../css/Leaderboard.css';
 import PointsChart from './PointsChart';
+import { fetchUserData } from '../api'; // Import fetchUserData
 
 const ProfilePage = () => {
     const [profile, setProfile] = useState({});
@@ -28,15 +29,15 @@ const ProfilePage = () => {
         '14d': '14 Days',
         '30d': '30 Days',
     };
+
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/user/profile/', {
-            headers: {
-                'Authorization': `Token ${token}`,
-            },
-        })
-        .then(response => setProfile(response.data))
-        .catch(error => console.error('Error:', error));
-    }, [token]);
+        const fetchData = async () => {
+            const userData = await fetchUserData();
+            setProfile(userData);
+        };
+
+        fetchData();
+    }, []);
 
     const handleDurationChange = (newDuration) => {
         setDuration(newDuration);
